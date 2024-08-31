@@ -1,0 +1,213 @@
+/* Fuentes y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+/* Fondo con nubes y estrellas */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px) repeat;
+    background-size: 4px 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos del contenedor de inicio de sesión */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+h2 {
+    color: #ffeb3b; /* Amarillo claro */
+    margin-bottom: 1rem;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ffeb3b; /* Amarillo claro */
+    outline: none;
+    font-size: 1rem;
+    background: #fff;
+    color: #333;
+    padding-left: 40px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field input:focus {
+    border-color: #fbc02d; /* Amarillo más intenso */
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #ffeb3b; /* Amarillo claro */
+}
+
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #fbc02d; /* Amarillo más intenso */
+    color: #333; /* Letras oscuras */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+}
+
+.btn:hover {
+    background: #f9a825; /* Amarillo más oscuro */
+    opacity: 0.8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.link {
+    color: #fbc02d; /* Amarillo más intenso */
+    margin-top: 1rem;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #f9a825; /* Amarillo más oscuro */
+}
+
+/* Botón de cambio de tema */
+.switch-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para el botón de cambio de tema */
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.switch-theme img {
+    width: 30px;
+    height: 30px;
+}
+
+.switch-theme.dark-mode {
+    background: #4a1d8d; /* Lila más oscuro para el botón en modo oscuro */
+}
+
+/* Modo oscuro */
+.dark-mode .login-container {
+    background: #444444; /* Gris oscuro para el recuadro en modo oscuro */
+}
+
+.dark-mode h2 {
+    color: #ddd; /* Texto claro */
+}
+
+.dark-mode .input-field i {
+    color: #ddd; /* Icono claro */
+}
+
+.dark-mode .input-field input {
+    background: #333; /* Fondo oscuro para el campo de entrada */
+    color: #ddd; /* Texto claro */
+    border: 1px solid #666; /* Borde gris */
+}
+
+.dark-mode .input-field input:focus {
+    border-color: #4a1d8d; /* Lila oscuro al enfocar */
+}
+
+.dark-mode .btn {
+    background: #4a1d8d; /* Lila más oscuro */
+    color: #fff; /* Letras blancas */
+}
+
+.dark-mode .btn:hover {
+    background: #3e156c; /* Lila aún más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte en modo oscuro */
+}
+
+.dark-mode .link {
+    color: #ddd; /* Texto claro */
+}
+
+.dark-mode .link:hover {
+    color: #bbb; /* Texto un poco más claro al hacer hover */
+}
+
+.dark-mode .background {
+    background: #0a1120; /* Fondo oscuro */
+}
+
+.dark-mode .stars {
+    opacity: 1; /* Estrellas visibles en modo oscuro */
+}
+
+.dark-mode .clouds {
+    opacity: 0; /* Ocultar nubes en modo oscuro */
+}
